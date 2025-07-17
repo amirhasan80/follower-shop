@@ -491,3 +491,66 @@ footer {
   </footer>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>سفارش سرویس</title>
+  <style>
+    body { font-family: sans-serif; direction: rtl; margin: 2rem; }
+    label { display: block; margin-top: 1rem; }
+    input, select, button { padding: 0.5rem; width: 100%; margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <h1>سفارش سرویس</h1>
+  <form id="orderForm">
+    <label>شناسه سرویس:
+      <input type="number" name="service" required>
+    </label>
+    <label>لینک:
+      <input type="url" name="link" required>
+    </label>
+    <label>تعداد:
+      <input type="number" name="quantity" required>
+    </label>
+    <button type="submit">ثبت سفارش</button>
+  </form>
+
+  <div id="result" style="margin-top: 2rem;"></div>
+
+  <script>
+    const form = document.getElementById('orderForm');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const data = {
+        service: form.service.value,
+        link: form.link.value,
+        quantity: form.quantity.value
+      };
+
+      result.textContent = "در حال ارسال سفارش...";
+
+      try {
+        const res = await fetch("https://YOUR-BACKEND-URL-HERE/api/order", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        const json = await res.json();
+        if (json.order) {
+          result.textContent = "✅ سفارش ثبت شد! کد سفارش: " + json.order;
+        } else {
+          result.textContent = "❌ خطا: " + JSON.stringify(json);
+        }
+      } catch (err) {
+        result.textContent = "❌ خطای شبکه: " + err.message;
+      }
+    });
+  </script>
+</body>
+</html>
