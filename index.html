@@ -109,3 +109,168 @@
   <a href="services.html" class="button">ورود به خدمات</a>
 </body>
 </html>
+<!DOCTYPE html><html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>سفارش خدمات شبکه‌های اجتماعی</title>
+  <style>
+    body {
+      font-family: 'Vazir', sans-serif;
+      background: linear-gradient(to bottom right, #eef2ff, #c7d2fe);
+      color: #1e293b;
+      padding: 20px;
+      margin: 0;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #4f46e5;
+    }
+    .grid {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+      max-width: 1200px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      padding: 24px;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card h2 {
+      margin-bottom: 16px;
+      color: #4338ca;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 16px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #e5e7eb;
+      text-align: center;
+      font-size: 14px;
+    }
+    button {
+      background: #4f46e5;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #3730a3;
+    }
+    .footer {
+      margin-top: 50px;
+      padding: 20px;
+      text-align: center;
+      background: #e0e7ff;
+      border-radius: 12px;
+    }
+    .footer strong {
+      color: #1e40af;
+    }
+    form {
+      margin-top: 30px;
+      text-align: right;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: inherit;
+    }
+  </style>
+</head>
+<body><h1>سفارش خدمات شبکه‌های اجتماعی</h1>
+<div class="grid">  <div class="card">
+    <h2>اینستاگرام</h2>
+    <table>
+      <tr><th>خدمت</th><th>قیمت</th></tr>
+      <tr><td>۱۰۰۰ فالوور واقعی</td><td>۴۵ هزار تومان</td></tr>
+      <tr><td>۱۰۰۰ لایک</td><td>۳۰ هزار تومان</td></tr>
+      <tr><td>۱۰۰۰ ویو</td><td>۲۰ هزار تومان</td></tr>
+    </table>
+    <button onclick="goToPayment('اینستاگرام')">سفارش اینستاگرام</button>
+  </div>  <div class="card">
+    <h2>تلگرام</h2>
+    <table>
+      <tr><th>خدمت</th><th>قیمت</th></tr>
+      <tr><td>۱۰۰۰ ممبر واقعی</td><td>۶۰ هزار تومان</td></tr>
+      <tr><td>۱۰۰۰ ویو پست</td><td>۲۵ هزار تومان</td></tr>
+      <tr><td>لایک نظرسنجی</td><td>۱۵ هزار تومان</td></tr>
+    </table>
+    <button onclick="goToPayment('تلگرام')">سفارش تلگرام</button>
+  </div>  <div class="card">
+    <h2>یوتیوب</h2>
+    <table>
+      <tr><th>خدمت</th><th>قیمت</th></tr>
+      <tr><td>۱۰۰۰ ویو</td><td>۵۰ هزار تومان</td></tr>
+      <tr><td>۱۰۰ سابسکرایب</td><td>۸۰ هزار تومان</td></tr>
+      <tr><td>۱۰۰ لایک</td><td>۳۰ هزار تومان</td></tr>
+    </table>
+    <button onclick="goToPayment('یوتیوب')">سفارش یوتیوب</button>
+  </div>  <div class="card">
+    <h2>روبیکا</h2>
+    <table>
+      <tr><th>خدمت</th><th>قیمت</th></tr>
+      <tr><td>۱۰۰۰ ممبر کانال</td><td>۳۵ هزار تومان</td></tr>
+      <tr><td>۱۰۰۰ ویو پست</td><td>۱۵ هزار تومان</td></tr>
+      <tr><td>۱۰۰ فالوور پروفایل</td><td>۲۵ هزار تومان</td></tr>
+    </table>
+    <button onclick="goToPayment('روبیکا')">سفارش روبیکا</button>
+  </div></div><div class="footer" id="payment-section" style="display:none">
+  <h2>اطلاعات پرداخت</h2>
+  <p>لطفاً مبلغ مربوط به سرویس انتخابی را به شماره کارت زیر واریز نمایید:</p>
+  <p><strong>۶۲۱۹-۸۶۱۹-۷۳۳۰-۲۹۴۵</strong><br>به نام <strong>امیرحسن آقایی</strong></p>
+  <p>پس از پرداخت، اطلاعات زیر را جهت پیگیری ارسال نمایید:</p>
+  <ul style="list-style:none; padding:0;">
+    <li>📧 ایمیل: <strong>amirt0820@gmail.com</strong></li>
+    <li>📞 تلفن: <strong>09307308774</strong></li>
+  </ul>
+  <p>همچنین می‌توانید فرم زیر را برای ثبت سفارش پر کنید:</p>
+</div><form id="order-form" style="display:none">
+  <label for="name">نام و نام خانوادگی</label>
+  <input type="text" id="name" name="name" required><label for="service">نوع خدمت</label> <select id="service" name="service"> <option value="اینستاگرام">اینستاگرام</option> <option value="تلگرام">تلگرام</option> <option value="یوتیوب">یوتیوب</option> <option value="روبیکا">روبیکا</option> </select>
+
+<label for="details">توضیحات سفارش (مثلاً لینک پیج، تعداد فالوور)</label>
+
+  <textarea id="details" name="details" rows="4"></textarea><label for="contact">راه ارتباطی (شماره یا ایمیل)</label> <input type="text" id="contact" name="contact" required>
+
+<button type="submit">ارسال سفارش</button>
+
+</form><script>
+  function goToPayment(serviceName) {
+    const section = document.getElementById('payment-section');
+    const form = document.getElementById('order-form');
+    document.getElementById('service').value = serviceName;
+    section.style.display = 'block';
+    form.style.display = 'block';
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+</script></body>
+</html>
